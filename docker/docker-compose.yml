@@ -1,11 +1,11 @@
 services:
 
   # DB
-  mariadb:
-    container_name: mariadb
+  mariadb2:
+    container_name: mariadb2
     image: mariadb:latest
     ports:
-      - "3361:3306"
+      - "3362:3306"
     environment:
       MARIADB_ROOT_PASSWORD: ${ROOT_PWD}
       MARIADB_ROOT_HOST: ${ROOT_HOST}
@@ -15,11 +15,11 @@ services:
       YourNetwork:
 
   # Redis
-  redis: 
-    container_name: redis
-    image: redis:7
+  redis2: 
+    container_name: redis2
+    image: redis:latest
     ports:
-      - 6380:6379
+      - 6382:6379
     command: >
       /bin/sh -c 'redis-server --requirepass ${REDIS_PASSWORD}'
     networks:
